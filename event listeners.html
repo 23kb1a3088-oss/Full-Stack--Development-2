@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Element Selection Program</title>
+</head>
+<body>
+
+    <h1 id="main-heading">Hello, Selectors!</h1>
+    <p class="content-text">This is the first paragraph.</p>
+    <p class="content-text">This is the second paragraph.</p>
+
+    <ul>
+        <li>Item 1</li>
+        <li class="special">Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <script>
+        // 1. Select by ID and change its content
+        const heading = document.getElementById('main-heading');
+        heading.textContent = 'DOM Manipulation is Fun!';
+
+        // 2. Select by class and change the color of the first element
+        const paragraphs = document.getElementsByClassName('content-text');
+        paragraphs[0].style.color = 'blue';
+
+        // 3. Select a specific list item using a CSS selector
+        const specialItem = document.querySelector('li.special');
+        specialItem.style.fontWeight = 'bold';
+
+        // 4. Select all list items and add a border to each
+        const allListItems = document.querySelectorAll('li');
+        allListItems.forEach(item => {
+            item.style.border = '1px solid black';
+            item.style.padding = '5px';
+            item.style.margin = '5px';
+        });
+    </script>
+
+</body>
+</html>
