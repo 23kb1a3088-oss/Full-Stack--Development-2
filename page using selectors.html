@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript Selectors</title>
+</head>
+<body>
+
+    <h1 id="main-title">DOM Selection Example</h1>
+    <div class="container">
+        <p class="text-block">This is the first paragraph.</p>
+        <p class="text-block">This is the second paragraph.</p>
+    </div>
+    <ul>
+        <li>First item</li>
+        <li class="special">Second item</li>
+        <li>Third item</li>
+    </ul>
+
+    <script>
+        // Select by ID
+        const mainTitle = document.getElementById('main-title');
+        console.log('Selected by ID:', mainTitle.textContent);
+
+        // Select by Class Name
+        const textBlocks = document.getElementsByClassName('text-block');
+        console.log('Selected by Class:', textBlocks[0].textContent);
+
+        // Select using querySelector (first match)
+        const firstParagraph = document.querySelector('.container p');
+        console.log('Selected with querySelector:', firstParagraph.textContent);
+
+        // Select all matching elements with querySelectorAll
+        const allListItems = document.querySelectorAll('li');
+        allListItems.forEach(item => {
+            console.log('Selected with querySelectorAll:', item.textContent);
+        });
+
+        // Change the content of the selected elements
+        mainTitle.textContent = 'Selectors in Action!';
+        textBlocks[0].style.color = 'blue';
+        document.querySelector('.special').style.fontWeight = 'bold';
+    </script>
+
+</body>
+</html>
